@@ -1,0 +1,462 @@
+.app-wrapper {
+    background-color: #172232;
+    height: 100vh;
+    width: 100vw;
+    margin:0 !important;
+    top:0;
+    overflow: hidden;
+    position: absolute;
+    margin: 100px;
+    z-index: -1;
+}
+app-video-player {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+app-welcome-animation {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+app-welcome-animation:hover {
+    cursor: pointer;
+}
+.top-indicators {
+    display: flex;
+
+    .logo-container {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        margin: 10px;
+        position: relative;
+    }
+    .logo {
+        position:absolute;
+        height: 100px;
+        left: -100%;
+        right: -100%;
+        top: -100%;
+        bottom: -100%;
+        margin: auto;
+        min-height: 100%;
+        min-width: 100%;
+    }
+    .micro-status {
+        background: #ffffff;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 12px;
+        vertical-align: middle;
+        padding: 10px 12px 14px 12px;
+        margin: 40px;
+        margin-right: 15px;
+        float: inherit;
+        position: absolute;
+        right: 0px;
+        z-index: 10;
+    }
+    .micro-on {
+        animation: pulse-micro 2s infinite;
+    }
+    .micro-off {
+        background: #a5a5a5;
+    }
+    .repeat-last {
+        background: #ffffff;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 12px;
+        vertical-align: middle;
+        padding: 10px 12px 14px 12px;
+        margin: 40px;
+        margin-right: 15px;
+        float: inherit;
+        position: absolute;
+        right: 0px;
+        top: 60px;
+        z-index: 10;
+    }
+    .tutorial-btn {
+        background: #fccf3f;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 12px;
+        vertical-align: middle;
+        padding: 10px 12px 14px 12px;
+        margin: 40px;
+        margin-right: 15px;
+        float: inherit;
+        position: absolute;
+        right: 0px;
+        top: 120px;
+        z-index: 10;
+    }
+    .repeat-last, .tutorial-btn {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+.speech-detected {
+    height: 40px;
+    margin: 40px;
+    display: flex;
+    left: 25vw;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 20px;
+    min-height: 45px;
+    width: 40vw;
+    line-height: 3;
+    padding-left: 15px;
+	animation: moonGlow 4s infinite alternate;
+    visibility: hidden;
+    overflow: overlay;
+}
+
+.counter-wrapper {
+    background-color: #75737396;
+    padding: 0px 10px;
+    border-radius: 50px;
+    height: 45px;
+    width: 112px; /* 130 for 3 digits */
+    margin-top: 40px;
+    position: absolute;
+    right: 20vw;
+    z-index: 10;
+
+    .meteor-icon {
+        height: 50px;
+        transform: rotate(245deg);
+        display: inline-block;
+        position: relative;
+        top: -3px;
+    }
+    .classification-count {
+        color: #ffffff;
+        display: inline-block;
+        margin-left: 30px;
+        vertical-align: top;
+        font-family: 'Press Start 2P', cursive;
+    }
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#earth {
+    height: 20vh;
+    position: absolute;
+    width: 100vw;
+    bottom: 0px;
+    .earth-animation {
+        width: 90vw;
+        display: block;
+        margin: auto;
+        animation: infinite-spinning 60s infinite linear;
+    }
+}
+@media screen and (min-width: 768px) {
+    #earth {
+        height: 32vh;    
+    }
+    .speech-detected {
+        visibility: visible;
+    }
+    .counter-wrapper {
+        right: 10vw;
+    }
+}
+
+
+/* Stickers and decorators */
+#meteor {
+    animation: spin-right 30s linear infinite;
+}
+.meteor-animation {
+    background: radial-gradient(circle closest-side, red, yellow 10%, #ff821e 60%, #ffffff00);
+    height: 50px;
+    transform: rotate(80deg);
+}
+@keyframes pulse-micro {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+	}
+	
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+	}
+	
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
+}
+
+@keyframes infinite-spinning {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+@keyframes moonGlow {
+  from {
+      -webkit-box-shadow: 0 0 25px #d8dcdd;
+      -moz-box-shadow: 0 0 25px #d8dcdd;
+      -o-box-shadow: 0 0 25px #d8dcdd;
+      box-shadow: 0 0 10px #d8dcdd;
+  }
+  to {
+      -webkit-box-shadow: 0 0 50px #d8dcdd;
+      -moz-box-shadow: 0 0 50px #d8dcdd;
+      -o-box-shadow: 0 0 50px #d8dcdd;
+      box-shadow: 0 0 25px #d8dcdd;	
+  }
+}
+/* Stars */
+.stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    animation: animStar 50s linear infinite;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 1px;
+        height: 1px;
+        background: transparent;
+    }
+}
+    
+.stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    animation: animStar 100s linear infinite;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 2px;
+        height: 2px;
+        background: transparent;
+    }
+}
+   
+.stars3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    animation: animStar 150s linear infinite;
+    
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 3px;
+        height: 3px;
+        background: transparent;
+    };
+}
+  
+@keyframes animStar {
+    from	{
+        transform: translateY(0px);
+      } to {
+        transform: translateY(-2000px);
+      }
+}
+
+@-webkit-keyframes spin-right {
+    /*
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+    */
+    0% {
+        opacity: 1;
+        transform: rotate(180deg) translateY(300%)  translateX(25%);
+    }
+    20% {
+        transform: rotate(190deg) translateX(-20%); /* Valor inicial a -6 en X */
+    }
+    100% {
+        transform: rotate(190deg) translateX(-50%);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px) rotate(20deg);
+	}
+	50% {
+		transform: translatey(-30px) rotate(35deg) translateX(10px) ;
+	}
+	100% {
+		transform: translatey(0px) rotate(20deg);
+	}
+}
+
+@keyframes float1 {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+@keyframes balancing {
+    from {
+      transform: rotate(-10deg);
+    }
+    to {
+      transform: rotate(10deg);
+    }
+}
+@keyframes goldenStar {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+        text-shadow: azure;
+	}
+	100% {
+		transform: translatey(0px);
+	}
+  }
+.companion-animation {
+    height: 25vh;
+    animation: float 6s ease-in-out infinite;
+    left: 7vw;
+    bottom: 15vh;
+    position: absolute;
+    z-index: 10;
+}
+.fisherman-animation {
+    height: 9vh;
+    position: absolute;
+    left: 25vw;
+    top: 41vh;
+    animation: float1 10s ease-in-out infinite;
+}
+.banderilla-animation {
+    height: 9vh;
+    position: absolute;
+    right: 8vw;
+    top: 52vh;
+    animation: float1 7s ease-in-out infinite;
+}
+.mars-animation {
+    position: absolute;
+    left: 5vw;
+    height: 13vh;
+    top: 20vh;
+    animation: infinite-spinning 10s linear infinite;
+}
+.rocket {    
+    height: 10vh;
+    transform: rotate(236deg);
+    position: absolute;
+    top: 15vh;
+    right: 0;
+    animation: spin-left 30s linear infinite;
+}
+.satellite-animation {
+    position: absolute;
+    left: 70vw;
+    top: 70vh;
+    height: 12vh;
+    animation: balancing 5s alternate infinite;
+
+}
+.goldenStar-animation {
+    position: absolute;
+    left: 45vw;
+    top: 25vh;
+    height: 10vh;
+    animation: goldenStar 5s ease-in-out infinite;
+}
+
+@-webkit-keyframes spin-left {
+    0% {
+        opacity: 1;
+        transform: rotate(180deg) translateY(-300%)  translateX(-25%);
+    }
+    20% {
+        transform: rotate(190deg) translateX(-6%);
+    }
+    100% {
+        transform: rotate(190deg) translateX(-50%);
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .companion-animation {
+        height: 30vh;
+        left: 10vw;
+        bottom: 20vh;
+        z-index: 10;
+    }
+    .fisherman-animation {
+        height: 10vh;
+        left: 25vw;
+        top: 25vh;
+    }
+    .banderilla-animation {
+        height: 10vh;
+        right: 15vw;
+        top: 40vh;
+    }
+    .mars-animation {
+        left: 5vw;
+        height: 13vh;
+        top: 28vh;
+    }
+    .satellite-animation {
+        left: 80vw;
+        top: 70vh;
+        height: 12vh;    
+    }
+    .goldenStar-animation {
+        left: 50vw;
+        top: 35vh;
+        height: 10vh;
+    }
+}

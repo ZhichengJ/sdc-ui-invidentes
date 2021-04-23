@@ -1,0 +1,12 @@
+<router-outlet></router-outlet>
+<app-welcome-animation *ngIf="showingWelcome" (click)="accessApp()"></app-welcome-animation>
+<app-video-player *ngIf="showingVideo" (closeEvent)="stopVideo()"></app-video-player>
+
+<div class="app-wrapper">
+    
+    <div class="stars" [ngStyle]="{'box-shadow': small}"></div>
+    <div class="stars2" [ngStyle]="{'box-shadow': medium}"></div>
+    <div class="stars3" [ngStyle]="{'box-shadow':big}"></div>
+    
+    <div class="logo"><img class="logo" src="../assets/img/logos/logo-sonidos-del-cielo.svg"></div>
+</div>

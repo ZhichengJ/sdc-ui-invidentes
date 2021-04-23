@@ -1,0 +1,31 @@
+.wrapper-animation {
+    text-align: center;
+    margin: auto;
+    padding: 50px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #6fc3df;
+    border-radius: 50px;
+    background-color: #172232d7;
+    width: 70vw;
+}
+.start-instructions {
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.start-icon {
+    font-size: 150px;
+    color: #fff;
+    animation: pointing 1s infinite alternate;
+}
+
+@-webkit-keyframes pointing {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes pointing {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
